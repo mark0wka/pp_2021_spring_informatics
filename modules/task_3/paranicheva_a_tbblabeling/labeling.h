@@ -24,6 +24,7 @@ class FirstMarkTBB {
     std::vector<int> kolvo;
     int rows;
     int cols;
+
  public:
     FirstMarkTBB(std::vector<int>* _arr, std::vector<int>* _sets, const std::vector<int>& _strbeg,
         const std::vector<int>& _kolvo, int _rows, int _cols) :
