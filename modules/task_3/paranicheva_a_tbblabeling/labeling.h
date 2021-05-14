@@ -2,9 +2,9 @@
 #ifndef MODULES_TASK_3_PARANICHEVA_A_TBBLABELING_LABELING_H_
 #define MODULES_TASK_3_PARANICHEVA_A_TBBLABELING_LABELING_H_
 
+#include <tbb/tbb.h>
 #include <vector>
 #include <utility>
-#include <tbb/tbb.h>
 #include "tbb/parallel_for.h"
 
 std::vector<int> getRandomMatrix(int rows, int cols);
