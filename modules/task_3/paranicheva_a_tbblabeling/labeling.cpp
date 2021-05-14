@@ -91,8 +91,7 @@ std::vector<int> secondMark(std::vector<int> arr, int rows, int cols, std::vecto
             continue;
         if (sets[arr[i]] == arr[i]) {
             res[i] = arr[i];
-        }
-        else {
+        } else {
             while (sets[arr[i]] != arr[i])
                 arr[i] = sets[arr[i]];
             res[i] = arr[i];
@@ -110,8 +109,7 @@ std::vector<int> CLabelingTBB(const std::vector<int>& array, int rows, int cols)
     return Transform(res, rows, cols);
 }
 
-std::pair<std::vector<int>, std::vector<int> > firstMarkTBB(std::vector<int> arr, int rows, int cols)
-{
+std::pair<std::vector<int>, std::vector<int> > firstMarkTBB(std::vector<int> arr, int rows, int cols) {
     int threads = 4;
     tbb::task_scheduler_init init(threads);
 
