@@ -28,7 +28,7 @@ class FirstMarkTBB {
     FirstMarkTBB(std::vector<int>* _arr, std::vector<int>* _sets, const std::vector<int>& _strbeg,
         const std::vector<int>& _kolvo, int _cols) :
         arr(_arr), sets(_sets), strbeg(_strbeg), kolvo(_kolvo), cols(_cols) {}
-    
+
     void operator() (const tbb::blocked_range<int>& range) const {
         for (int i = strbeg[range.begin()]; i < strbeg[range.begin()] + kolvo[range.begin()]; i++) {
             for (int j = 1; j < cols - 1; j++) {
