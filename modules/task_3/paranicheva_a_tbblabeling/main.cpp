@@ -5,21 +5,6 @@
 #include <ctime>
 #include "./labeling.h"
 
-//TEST(CLabeling_Omp, 10000x10000) {
-//    int rows = 10000;
-//    int cols = 10000;
-//    std::vector<int> img = getRandomMatrix(rows, cols);
-//    double start = clock();
-//    std::vector<int> expres = CLabeling(img, rows, cols);
-//    double end = clock();
-//    printf("Sequential tooks %f seconds\n", (end - start) / 1000);
-//    double start1 = omp_get_wtime();
-//    std::vector<int> res = CLabelingOmp(img, rows, cols);
-//    double end1 = omp_get_wtime();
-//    printf("OMP tooks %f seconds\n", end1 - start1);
-//    ASSERT_TRUE(true);
-//}
-
 TEST(CLabeling_TBB, 7x10) {
     int rows = 15;
     int cols = 17;
