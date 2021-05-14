@@ -2,10 +2,10 @@
 #ifndef MODULES_TASK_3_PARANICHEVA_A_TBBLABELING_LABELING_H_
 #define MODULES_TASK_3_PARANICHEVA_A_TBBLABELING_LABELING_H_
 
-#include <tbb/tbb.h>
-#include "tbb/parallel_for.h"
 #include <vector>
 #include <utility>
+#include <tbb/tbb.h>
+#include "tbb/parallel_for.h"
 
 std::vector<int> getRandomMatrix(int rows, int cols);
 
@@ -24,20 +24,22 @@ class FirstMarkTBB {
     std::vector<int> kolvo;
     int rows;
     int cols;
-public:
+ public:
     FirstMarkTBB(std::vector<int>* _arr, std::vector<int>* _sets, std::vector<int> _strbeg,
         std::vector<int> _kolvo, int _rows, int _cols) :
-        arr(_arr), sets(_sets), strbeg(_strbeg), kolvo(_kolvo), rows(_rows), cols(_cols) {};
+        arr(_arr), sets(_sets), strbeg(_strbeg), kolvo(_kolvo), rows(_rows), cols(_cols) {}
     void operator() (const tbb::blocked_range<int>& range) const {
         for (int i = strbeg[range.begin()]; i < strbeg[range.begin()] + kolvo[range.begin()]; i++) {
             for (int j = 1; j < cols - 1; j++) {
                 if ((*arr)[i * cols + j] == 0)
                     continue;
-                if (((*arr)[i * cols + j - 1] == 0) && (((*arr)[(i - 1) * cols + j] == 0) || (i == strbeg[range.begin()]))) {
+                if (((*arr)[i * cols + j - 1] == 0) && (((*arr)[(i - 1) * cols + j] == 0) ||
+                                                        (i == strbeg[range.begin()]))) {
                     (*arr)[i * cols + j] = i * cols + j + 1;
                     continue;
                 }
-                if (((*arr)[i * cols + j - 1] != 0) && (((*arr)[(i - 1) * cols + j] == 0) || (i == strbeg[range.begin()]))) {
+                if (((*arr)[i * cols + j - 1] != 0) && (((*arr)[(i - 1) * cols + j] == 0) ||
+                                                        (i == strbeg[range.begin()]))) {
                     (*arr)[i * cols + j] = (*arr)[i * cols + j - 1];
                     continue;
                 }
@@ -50,8 +52,7 @@ public:
                     if ((*arr)[i * cols + j - 1] < (*arr)[(i - 1) * cols + j]) {
                         max = (*arr)[(i - 1) * cols + j];
                         min = (*arr)[i * cols + j - 1];
-                    }
-                    else {
+                    } else {
                         max = (*arr)[i * cols + j - 1];
                         min = (*arr)[(i - 1) * cols + j];
                     }
