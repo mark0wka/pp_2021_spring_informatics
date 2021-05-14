@@ -130,7 +130,7 @@ std::pair<std::vector<int>, std::vector<int> > firstMarkTBB(std::vector<int> arr
     for (int i = 0; i < rows * cols; i++)
         sets[i] = i;
 
-    FirstMarkTBB tbb(&arr, &sets, strbeg, kolvo, rows, cols);
+    FirstMarkTBB tbb(&arr, &sets, strbeg, kolvo, cols);
     tbb::parallel_for(tbb::blocked_range<int>(0, threads, 1), tbb);
 
     for (int i = 1; i < threads; i++) {
