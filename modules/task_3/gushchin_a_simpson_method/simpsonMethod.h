@@ -9,9 +9,9 @@
 
 class pointsSum {
     int segmentsSize;
+    const std::function<double(const std::vector<double>&)>& func;
     const std::vector<double>& firstPoint;
     const std::vector<double>& segmentsSteps;
-    const std::function<double(const std::vector<double>&)>& func;
 
  public:
     double evenValues = 0;
