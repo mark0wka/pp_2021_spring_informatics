@@ -1,15 +1,9 @@
 // Copyright 2021 Solovev Aleksandr
-#include "../../../modules/task_3/solovev_a_radix_sort/radix_sort.h"
 
 #include <tbb/blocked_range.h>
 #include <tbb/parallel_for.h>
-#include <stdio.h>
 
-#include <cstring>
-#include <utility>
-
-
-
+#include "../../../modules/task_3/solovev_a_radix_sort/radix_sort.h"
 
 int generateRandomArray(std::vector<int> *buffer, int min, int max) {
     std::mt19937 gen;
@@ -180,7 +174,7 @@ void merge(int* a, int size_a, int* b, int size_b) {
 int ParallelSortingTBB(std::vector<int> *arr) {
     int size = static_cast<int>(arr->size());
     int min_grain_size = 10;
-    int divider = 5;
+    int divider = 5;  
     int part_arr_size = size / divider;
     int grain_size = part_arr_size > min_grain_size ? part_arr_size : min_grain_size;
     tbb::parallel_for(tbb::blocked_range<int>(0, size, grain_size), [&arr](const tbb::blocked_range<int>& r) {

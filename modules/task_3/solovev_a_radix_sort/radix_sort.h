@@ -2,7 +2,9 @@
 #ifndef MODULES_TASK_3_SOLOVEV_A_RADIX_SORT_RADIX_SORT_H_
 #define MODULES_TASK_3_SOLOVEV_A_RADIX_SORT_RADIX_SORT_H_
 
+#include <random>
 #include <vector>
+#include <time.h>
 
 int generateRandomArray(std::vector<int> *buffer, int min, int max);
 int SortingCheck(std::vector<int> *buffer);

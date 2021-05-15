@@ -1,10 +1,6 @@
 // Copyright 2021 Solovev Aleksandr
-#include <numeric>
-#include <utility>
-#include <algorithm>
 #include "gtest/gtest.h"
 #include <tbb/tick_count.h>
-
 
 #include "../../../modules/task_3/solovev_a_radix_sort/radix_sort.h"
 
