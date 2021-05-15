@@ -1,6 +1,6 @@
 // Copyright 2021 Gushchin Artem
 #include <gtest/gtest.h>
-#include <tbb/tbb.h>
+#include <tbb/tick_count.h>
 #include <cmath>
 #include <iostream>
 #include <vector>
