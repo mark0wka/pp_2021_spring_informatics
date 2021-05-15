@@ -174,7 +174,7 @@ void merge(int* a, int size_a, int* b, int size_b) {
 int ParallelSortingTBB(std::vector<int> *arr) {
     int size = static_cast<int>(arr->size());
     int min_grain_size = 10;
-    int divider = 5;  
+    int divider = 5;
     int part_arr_size = size / divider;
     int grain_size = part_arr_size > min_grain_size ? part_arr_size : min_grain_size;
     tbb::parallel_for(tbb::blocked_range<int>(0, size, grain_size), [&arr](const tbb::blocked_range<int>& r) {
