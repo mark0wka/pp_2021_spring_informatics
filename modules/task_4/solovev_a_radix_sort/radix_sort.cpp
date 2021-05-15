@@ -197,7 +197,6 @@ int ParallelSortingSTD(std::vector<int> *arr, int thread_count) {
 
     for (int i = 0; i < thread_count; i++)
         threads[i].join();
-
     for (int i = 1; i < thread_count; i++) {
         int current_size = part_vec_size;
         if (i == thread_count - 1) {
