@@ -179,6 +179,7 @@ void merge(int* a, int size_a, int* b, int size_b) {
     for (int i = 0; i < size_c; i++) {
         a[i] = c[i];
     }
+    delete[] c;
 }
 
 int ParallelSortingSTD(std::vector<int> *arr, int thread_count) {
