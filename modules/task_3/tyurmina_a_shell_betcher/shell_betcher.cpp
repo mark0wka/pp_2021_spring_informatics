@@ -205,7 +205,7 @@ std::vector<int> MergeTBB(const std::vector<int>& massiv, const int n, int size)
             int start= r.begin(), finish = r.end();
             for (int i = start; i != finish; ++i)
                 mass[i] = ShellSort(mass[i], mass[i].size());
-        }, tbb::simple_partitioner());
+        }, tbb::simple_partitioner()); 
 
     init.terminate();
     return ShellBetcherMerge(mass, n, size);
