@@ -1,11 +1,11 @@
 // Copyright 2021 Kuznetsov Nikita
+#include <tbb/tbb.h>
+#include <random>
 #include <algorithm>
 #include <cstring>
 #include <vector>
-#include <random>
 #include <ctime>
 #include <cmath>
-#include <tbb/tbb.h>
 #include "../../modules/task_3/kuznetsov_n_mult_sparse_mat_tbb/sparse_matrix.h"
 
 CcsMatrix::CcsMatrix(int _M, int _N, int nz) {
@@ -168,13 +168,14 @@ CcsMatrix matrixMultiplicate(const CcsMatrix* m1, const CcsMatrix* m2) {
     res.row.resize(res.colIndex.back());
 
     int count = 0;
+    double tmp;
     for (int i = 0; i < N; i++) {
         int size = value[i].size();
         if (size > 0) {
             memcpy(&res.value[count], &value[i][0],
-                size * sizeof(double));
+                size * sizeof(tmp));
             memcpy(&res.row[count], &row[i][0],
-                size * sizeof(int));
+                size * sizeof(count));
             count += size;
         }
     }

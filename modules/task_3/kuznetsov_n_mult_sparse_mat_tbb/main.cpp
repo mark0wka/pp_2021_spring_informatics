@@ -1,9 +1,9 @@
 // Copyright 2021 Kuznetsov Nikita
 #include <gtest/gtest.h>
+#include <tbb/tbb.h>
 #include <random>
 #include <ctime>
 #include <cmath>
-#include <tbb/tbb.h>
 #include "../../modules/task_3/kuznetsov_n_mult_sparse_mat_tbb/sparse_matrix.h"
 
 TEST(SPARSE_MATRIX, can_create_matrix) {
