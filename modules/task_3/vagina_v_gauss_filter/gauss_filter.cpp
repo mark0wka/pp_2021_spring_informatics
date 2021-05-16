@@ -32,12 +32,12 @@ std::vector<double> generateGaussianKernel(int radius) {
     return res;
 }
 
-std::vector<Pixel> generateRandomImage(size_t rows, size_t cols) {
+std::vector<Pixel> generateRandomImage(int rows, int cols) {
     std::mt19937 gen;
     gen.seed((unsigned)time(0));
     std::uniform_int_distribution<int> dis(0, 255);
     std::vector<Pixel> result(rows * cols);
-    for (size_t i = 0; i < rows * cols; ++i) {
+    for (int i = 0; i < rows * cols; ++i) {
         result[i] = {static_cast<uint8_t>(dis(gen)),
         static_cast<uint8_t>(dis(gen)), static_cast<uint8_t>(dis(gen))};
     }
@@ -46,7 +46,7 @@ std::vector<Pixel> generateRandomImage(size_t rows, size_t cols) {
 std::vector<Pixel> gaussFilter(const std::vector<Pixel> &a,
                                int rows, int cols) {
     std::vector<Pixel> res(a);
-    if (rows * cols != static_cast<size_t>(res.size())) {
+    if (rows * cols != static_cast<int>(res.size())) {
         throw "Matrix radiusensions do not match";
     }
 

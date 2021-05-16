@@ -11,7 +11,7 @@ struct Pixel {
 
 bool operator==(const Pixel &a, const Pixel &b);
 
-std::vector<Pixel> generateRandomImage(size_t rows, size_t cols);
+std::vector<Pixel> generateRandomImage(int rows, int cols);
 std::vector<Pixel> gaussFilter(const std::vector<Pixel> &a,
                                int rows, int cols);
 std::vector<Pixel> gaussFilterTBB(const std::vector<Pixel> &a,
