@@ -42,7 +42,7 @@ TEST(shell_betcher, shell_betcher_seq_50) {
 }
 
 TEST(shell_betcher, shell_betcher_tbb_50) {
-    std::vector<int> vec = Random(50); 
+    std::vector<int> vec = Random(50);
     std::vector<int> sort = MergeTBB(vec, 4, 50);
     std::sort(vec.begin(), vec.end());
 

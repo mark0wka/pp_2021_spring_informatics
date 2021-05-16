@@ -1,4 +1,4 @@
-// Copyright 2021 Tyurmina Alexandra 
+// Copyright 2021 Tyurmina Alexandra
 #include <tbb/tbb.h>
 #include <vector>
 #include <string>
@@ -29,8 +29,7 @@ std::vector<std::vector<int>> Separat(const std::vector<int>& massiv, size_t n) 
     for (size_t i = 0; i < n; ++i) {
         if (remainder > 0) {
             finish = finish + (integer + !!(remainder--));
-        }
-        else {
+        } else {
             finish = finish + integer;
         }
         std::vector<int> hal(massiv.begin() + start, massiv.begin() + finish);
@@ -74,8 +73,7 @@ std::vector<int> BetcherEven(const std::vector<int>& massiv1, const std::vector<
         if (massiv1[i1] <= massiv2[i2]) {
             mass_result[i] = massiv1[i1];
             i1 += 2;
-        }
-        else {
+        } else {
             mass_result[i] = massiv2[i2];
             i2 += 2;
         }
@@ -111,8 +109,7 @@ std::vector<int> BetcherOdd(const std::vector<int>& massiv1, const std::vector<i
         if (massiv1[i1] <= massiv2[i2]) {
             mass_result[i] = massiv1[i1];
             i1 += 2;
-        }
-        else {
+        } else {
             mass_result[i] = massiv2[i2];
             i2 += 2;
         }
@@ -156,8 +153,7 @@ std::vector<int> BetcherMerge(const std::vector<int>& massiveven, const std::vec
             mass_result[a] = massiveven[i1];
             i1 = i1 + 1;
         }
-    }
-    else {
+    } else {
         for (int a = i; a < size_result; a++) {
             mass_result[a] = massiveven[i2];
             i2 = i2 + 1;
@@ -180,7 +176,7 @@ std::vector<int> ShellBetcherSeq(const std::vector<int>& massiv, const int n, in
     for (int i = 0; i < static_cast<int>(mass.size()); i++) {
         mass[i] = ShellSort(mass[i], mass[i].size());
     }
-    return ShellBetcherMerge(mass, n1, size); 
+    return ShellBetcherMerge(mass, n1, size);
 }
 
 std::vector<int> ShellBetcherMerge(const std::vector<std::vector<int>>& massiv, const int n, int size) {
@@ -191,7 +187,7 @@ std::vector<int> ShellBetcherMerge(const std::vector<std::vector<int>>& massiv, 
     for (int i = 1; i < n; i++) {
         od = BetcherOdd(result, massiv[i]);
         ev = BetcherEven(result, massiv[i]);
-        result = BetcherMerge(ev,od);
+        result = BetcherMerge(ev, od);
     }
     return result;
 }
@@ -202,10 +198,10 @@ std::vector<int> MergeTBB(const std::vector<int>& massiv, const int n, int size)
     tbb::task_scheduler_init init(n);
     tbb::parallel_for(tbb::blocked_range<size_t>(0, mass.size(), 1),
         [&mass](const tbb::blocked_range<size_t>& r) {
-            int start= r.begin(), finish = r.end();
+            int start = r.begin(), finish = r.end();
             for (int i = start; i != finish; ++i)
                 mass[i] = ShellSort(mass[i], mass[i].size());
-        }, tbb::simple_partitioner()); 
+        }, tbb::simple_partitioner());
 
     init.terminate();
     return ShellBetcherMerge(mass, n, size);
