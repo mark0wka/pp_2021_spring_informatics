@@ -77,7 +77,7 @@ std::vector<Pixel> gaussFilter(const std::vector<Pixel> &a,
     return res;
 }
 std::vector<Pixel> gaussFilterTBB(const std::vector<Pixel> &a,
-    const int rows, const int cols) {//амперсанд??
+    const int rows, const int cols) {
     std::vector<Pixel> res(a);
     tbb::parallel_for(
         tbb::blocked_range<int>(0, rows),
