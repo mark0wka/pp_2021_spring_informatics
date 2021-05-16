@@ -1,12 +1,8 @@
 // Copyright 2021 Streltsova Yana
-#ifndef MODULES_TASK_2_STRELTSOVA_Y_SHELL_SORT_SHELL_SORT_H_
-#define MODULES_TASK_2_STRELTSOVA_Y_SHELL_SORT_SHELL_SORT_H_
+#ifndef MODULES_TASK_3_STRELTSOVA_Y_SHELL_SORT_SHELL_SORT_H_
+#define MODULES_TASK_3_STRELTSOVA_Y_SHELL_SORT_SHELL_SORT_H_
 
-#include "tbb/blocked_range.h"
-#include "tbb/parallel_for.h"
-#include "tbb/parallel_reduce.h"
-#include "tbb/task_scheduler_init.h"
-
+#include <tbb/tbb.h>
 #include <utility>
 #include <vector>
 
@@ -50,4 +46,4 @@ std::vector<T> shell_sort_parallel(const std::vector<T>& vec) {
     return result;
 }
 
-#endif  // MODULES_TASK_1_STRELTSOVA_Y_SHELL_SORT_SHELL_SORT_H_
+#endif  // MODULES_TASK_3_STRELTSOVA_Y_SHELL_SORT_SHELL_SORT_H_
