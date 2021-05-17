@@ -16,6 +16,7 @@ CcsMatrix::CcsMatrix(int _M, int _N, int nz) {
     not_zero_number = nz;
     value.resize(nz);
     row.resize(nz);
+	
 }
 
 double measurementOfTime(int M1, int N1, int N2, int num_threads) {
