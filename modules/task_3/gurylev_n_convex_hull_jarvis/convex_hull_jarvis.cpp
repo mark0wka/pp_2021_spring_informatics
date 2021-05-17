@@ -6,7 +6,7 @@
 
 #include "tbb/parallel_reduce.h"
 #include "tbb/blocked_range.h"
-#include "../../../modules/task_2/gurylev_n_convex_hull_jarvis/convex_hull_jarvis.h"
+#include "../../../modules/task_3/gurylev_n_convex_hull_jarvis/convex_hull_jarvis.h"
 
 std::vector<std::pair<int, int>> getRandomPoint(int size) {
     if (size <= 0) {
