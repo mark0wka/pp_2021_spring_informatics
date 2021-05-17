@@ -7,7 +7,7 @@
 #include "tbb/tick_count.h"
 
 TEST(ConvexHull, DISABLED_test1) {
-    std::vector<std::pair<int, int>> points = getRandomPoint(1500000);
+    std::vector<std::pair<int, int>> points = getRandomPoint(1550000);
     tbb::tick_count time1 = tbb::tick_count::now();
     std::vector<std::pair<int, int>> alg_seq = JarvisAlg(points);
     tbb::tick_count time2 = tbb::tick_count::now();
