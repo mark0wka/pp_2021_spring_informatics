@@ -143,8 +143,7 @@ std::vector<std::vector<double> > searchReverseMatrix(std::vector<std::vector<do
         for (int j = 0; j < size; j++) {
             if (i == j) {
                 E[i][j] = 1.0;
-            }
-            else {
+            } else {
                 E[i][j] = 0.0;
             }
         }
