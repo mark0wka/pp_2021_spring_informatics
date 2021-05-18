@@ -36,7 +36,7 @@ TEST(Monte_carlo_integral_test, test_result_of_integral) {
     double res_tbb = tbbMonteCarlo(Integral_1, { a }, { b }, N);
     t2 = tbb::tick_count::now();
     std::cout << " Paral_Time = " << (t2 - t1).seconds() << std::endl;
-    
+
     ASSERT_NEAR(res_seq, res_tbb, 0.5);
 }
 
@@ -46,7 +46,7 @@ TEST(Monte_carlo_integral_test, test_result_of_integral_1) {
     tbb::tick_count t1, t2;
     int num_th = 4;
     const int N = 250000;
-    
+
     t1 = tbb::tick_count::now();
     double res_seq = seqMonteCarlo(Integral_2, a, b, N * num_th);
     t2 = tbb::tick_count::now();
@@ -55,7 +55,7 @@ TEST(Monte_carlo_integral_test, test_result_of_integral_1) {
     double res_tbb = tbbMonteCarlo(Integral_2, a, b, N);
     t2 = tbb::tick_count::now();
     std::cout << " Paral_Time = " << (t2 - t1).seconds() << std::endl;
-    
+
     ASSERT_NEAR(res_seq, res_tbb, 0.5);
 }
 
@@ -65,7 +65,7 @@ TEST(Monte_carlo_integral_test, test_result_of_integral_2) {
     tbb::tick_count t1, t2;
     int num_th = 4;
     const int N = 250000;
-    
+
     t1 = tbb::tick_count::now();
     double res_seq = seqMonteCarlo(Integral_3, a, b, N * num_th);
     t2 = tbb::tick_count::now();
@@ -74,7 +74,7 @@ TEST(Monte_carlo_integral_test, test_result_of_integral_2) {
     double res_tbb = tbbMonteCarlo(Integral_3, a, b, N);
     t2 = tbb::tick_count::now();
     std::cout << " Paral_Time = " << (t2 - t1).seconds() << std::endl;
-    
+
     ASSERT_NEAR(res_seq, res_tbb, 0.5);
 }
 
@@ -84,7 +84,7 @@ TEST(Monte_carlo_integral_test, test_result_of_integral_3) {
     tbb::tick_count t1, t2;
     int num_th = 4;
     const int N = 250000;
-    
+
     t1 = tbb::tick_count::now();
     double res_seq = seqMonteCarlo(Integral_3, a, b, N * num_th);
     t2 = tbb::tick_count::now();
@@ -93,7 +93,7 @@ TEST(Monte_carlo_integral_test, test_result_of_integral_3) {
     double res_tbb = tbbMonteCarlo(Integral_3, a, b, N);
     t2 = tbb::tick_count::now();
     std::cout << " Paral_Time = " << (t2 - t1).seconds() << std::endl;
-    
+
     ASSERT_NEAR(res_seq, res_tbb, 0.5);
 }
 
