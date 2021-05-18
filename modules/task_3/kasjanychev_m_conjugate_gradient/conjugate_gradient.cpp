@@ -149,7 +149,7 @@ std::vector<std::vector<double> > searchReverseMatrix(std::vector<std::vector<do
     for (int k = 0; k < size; k++) {
         if (fabs(matrix[k][k]) < 1e-8) {
             for (int i = k + 1; i < size; i++) {
-                if (abs(matrix[i][k]) > 1e-8) {
+                if (fabs(matrix[i][k]) > 1e-8) {
                     swap(matrix[k], matrix[i]);
                     swap(E[k], E[i]);
                     break;
