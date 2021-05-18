@@ -55,8 +55,7 @@ void Merge(double* mas1, double* mas2, double* mas3, int size1, int size2) {
         if (mas1[m1] < mas2[m2]) {
             mas3[m3] = mas1[m1];
             m1++;
-        }
-        else {
+        } else {
             mas3[m3] = mas2[m2];
             m2++;
         }
@@ -128,7 +127,7 @@ void ParSort(double* inp, double* out, int size, int threads) {
             for (int i = r.begin(); i != r.end(); i++){
                 double* in = new double[size];
                 SortAll(inp + offset[i], in, len[i]);
-            } 
+            }
         });
     int povtor = threads / 2 + threads % 2;
     int num = 2;
