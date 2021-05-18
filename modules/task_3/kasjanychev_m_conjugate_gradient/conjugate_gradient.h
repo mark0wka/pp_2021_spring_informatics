@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <cassert>
+#include <cmath>
 #include "tbb/task_scheduler_init.h"
 #include "tbb/tbb.h"
 #include "tbb/parallel_for.h"

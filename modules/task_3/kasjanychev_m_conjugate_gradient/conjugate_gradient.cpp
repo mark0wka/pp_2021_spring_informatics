@@ -147,7 +147,7 @@ std::vector<std::vector<double> > searchReverseMatrix(std::vector<std::vector<do
         }
     }
     for (int k = 0; k < size; k++) {
-        if (std::abs(matrix[k][k]) < 1e-8) {
+        if (fabs(matrix[k][k]) < 1e-8) {
             for (int i = k + 1; i < size; i++) {
                 if (abs(matrix[i][k]) > 1e-8) {
                     swap(matrix[k], matrix[i]);
@@ -223,7 +223,7 @@ std::vector<double> calculateResSeq(std::vector<std::vector<double> > mtx, const
         std::vector<double> r = subVec(r0, multiVec(alpha, multiMtxVecSeq(mtx, z0)));
         double beta = scalarProduct(r, r) / scalarProduct(r0, r0);
         std::vector<double> z = sumVec(r, multiVec(beta, z0));
-        check = std::sqrt(scalarProduct(r, r));
+        check = sqrt(scalarProduct(r, r));
         x0 = x;
         r0 = r;
         z0 = z;
@@ -253,7 +253,7 @@ std::vector<double> calculateResPar(std::vector<std::vector<double> > mtx, const
         std::vector<double> r = subVec(r0, multiVec(alpha, multiMtxVecPar(mtx, z0)));
         double beta = scalarProduct(r, r) / scalarProduct(r0, r0);
         std::vector<double> z = sumVec(r, multiVec(beta, z0));
-        check = std::sqrt(scalarProduct(r, r));
+        check = sqrt(scalarProduct(r, r));
         x0 = x;
         r0 = r;
         z0 = z;
