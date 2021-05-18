@@ -128,7 +128,7 @@ std::pair<std::vector<int>, std::vector<int> > firstMarkThr(std::vector<int> arr
 
     std::vector<std::thread> threads_std;
     for (int th = 0; th < threads; th++) {
-        threads_std.push_back(std::thread([th, &arr, &sets, &strbeg, &kolvo, &rows, &cols]() {
+        threads_std.push_back(std::thread([th, &arr, &sets, &strbeg, &kolvo, &cols]() {
             for (int i = strbeg[th]; i < strbeg[th] + kolvo[th]; i++) {
                 for (int j = 1; j < cols - 1; j++) {
                     if (arr[i * cols + j] == 0)
