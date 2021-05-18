@@ -47,8 +47,7 @@ double tbbMonteCarlo(double(*f)(const std::vector<double>&),
     std::vector<std::uniform_real_distribution<double>> r(mult);
     for (int i = 0; i < mult; i++)
         r[i] = std::uniform_real_distribution<double>(a[i], b[i]);
-    int num_th;
-
+    
     res = tbb::parallel_reduce(
                 tbb::blocked_range<size_t>(0, steps), 0.0,
                 [&](tbb::blocked_range<size_t> range, double running_total) {
