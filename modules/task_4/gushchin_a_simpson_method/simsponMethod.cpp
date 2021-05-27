@@ -70,7 +70,7 @@ double parallelSimpsonsMethod(
     const int remainder = (stepsCount - 1) % numOfThreads;
 
     int currentBegin = 1, currentEnd = 0;
-    int rootBegin, rootEnd;
+    int rootBegin = 1, rootEnd = 0;
 
     for (int i = 0; i < numOfThreads; ++i) {
         if (i < remainder) {
