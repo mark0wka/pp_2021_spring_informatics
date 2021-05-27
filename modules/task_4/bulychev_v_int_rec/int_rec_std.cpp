@@ -1,7 +1,4 @@
 // Copyright 2021 Bulychev Vladislav
-#include <vector>
-#include <cmath>
-#include <algorithm>
 #include "../../../modules/task_4/bulychev_v_int_rec/int_rec_std.h"
 #include "../../../3rdparty/unapproved/unapproved.h"
 

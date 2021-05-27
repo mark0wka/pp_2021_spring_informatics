@@ -1,8 +1,5 @@
 // Copyright 2021 Bulychev Vladislav
 #include <gtest/gtest.h>
-#include <cmath>
-#include <vector>
-#include <thread>
 #include "./int_rec_std.h"
 
 double f6(std::vector<double> t) {
@@ -57,19 +54,11 @@ TEST(Integrate_rectangle, DISABLED_Test_int_rec) {
     a[1] = 21;
     b[1] = 53;
 
-    auto t1 = std::chrono::high_resolution_clock::now();
     double ans1 = Calculation_Seq(a, b, 10000, f6);
-    auto t2 = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> time = t2 - t1;
     std::cout << "1: " << ans1 << std::endl;
-    std::cout << "Seq: " << time.count() << std::endl;
 
-    t1 = std::chrono::high_resolution_clock::now();
     double ans2 = Calculation_Std(a, b, 10000, f6);
-    t2 = std::chrono::high_resolution_clock::now();
-    time = t2 - t1;
     std::cout << "2: " << ans2 << std::endl;
-    std::cout << "Tbb: " << time.count() << std::endl;
 
     ASSERT_NEAR(ans2, ans1, 5000);
 }
@@ -84,19 +73,11 @@ TEST(Integrate_rectangle, Test_int_rec_1) {
     a[1] = 0;
     b[1] = 3;
 
-    auto t1 = std::chrono::high_resolution_clock::now();
     double ans1 = Calculation_Seq(a, b, 100, f1);
-    auto t2 = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> time = t2 - t1;
     std::cout << "1: " << ans1 << std::endl;
-    std::cout << "Seq: " << time.count() << std::endl;
 
-    t1 = std::chrono::high_resolution_clock::now();
     double ans2 = Calculation_Std(a, b, 100, f1);
-    t2 = std::chrono::high_resolution_clock::now();
-    time = t2 - t1;
     std::cout << "2: " << ans2 << std::endl;
-    std::cout << "Tbb: " << time.count() << std::endl;
 
     ASSERT_NEAR(ans1, ans2, 100);
 }
