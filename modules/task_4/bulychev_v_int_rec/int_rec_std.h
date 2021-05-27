@@ -4,7 +4,6 @@
 
 #include <vector>
 #include <thread>
-#include <mutex>
 #include <algorithm>
 
 double Calculation_Seq(std::vector<double> a, std::vector<double> b,
