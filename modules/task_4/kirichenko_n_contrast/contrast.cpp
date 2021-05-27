@@ -33,7 +33,6 @@ Result Contrast(const Result& rm) {
 
 Result Contraststd(const Result& rm) {
     Result outcome(rm.size());
-    std::pair<int, int> result;
     int min = 255, max = 0;
 
     int const numThreads = 4;
