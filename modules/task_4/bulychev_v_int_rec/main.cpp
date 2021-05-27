@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 #include <cmath>
 #include <vector>
+#include <thread>
 #include "./int_rec_std.h"
 
 double f6(std::vector<double> t) {
