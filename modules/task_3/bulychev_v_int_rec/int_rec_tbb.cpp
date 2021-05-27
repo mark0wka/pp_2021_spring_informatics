@@ -42,7 +42,6 @@ double Calculation_Seq(std::vector<double> a, std::vector<double> b,
 
 double Calculation_Tbb(std::vector<double> a, std::vector<double> b,
     int n, double(*f)(std::vector<double>)) {
-    //tbb::task_scheduler_init init(1);
     int size_a = a.size();
     std::vector<double> h;
     double result = 0.0;
