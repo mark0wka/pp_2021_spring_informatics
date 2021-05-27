@@ -2,9 +2,10 @@
 
 #include <algorithm>
 #include <functional>
-#include <future>
 #include <numeric>
 #include <vector>
+
+#include "../../../3rdparty/unapproved/unapproved.h"
 
 #include "../../../modules/task_4/gushchin_a_simpson_method/simpsonMethod.h"
 

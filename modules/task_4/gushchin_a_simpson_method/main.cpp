@@ -2,9 +2,10 @@
 #include <gtest/gtest.h>
 
 #include <cmath>
-#include <chrono>
 #include <iostream>
 #include <vector>
+
+#include "../../../3rdparty/unapproved/unapproved.h"
 
 #include "./simpsonMethod.h"
 
