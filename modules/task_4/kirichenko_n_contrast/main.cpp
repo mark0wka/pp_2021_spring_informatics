@@ -1,6 +1,5 @@
 // Copyright 2021 Kirichenko Nikita
 #include <gtest/gtest.h>
-#include <omp.h>
 #include "./contrast.h"
 
 TEST(Image_contrast, Test1) {
@@ -51,17 +50,8 @@ TEST(Image_contrast, DISABLED_Test5) {
     int l = 10000;
     int k = 10000;
     Result image = RandomI(l, k);
-    std::pair<double, double> time = { 0, 0 };
-    time.first = omp_get_wtime();
     Result result_seq = Contrast(image);
-    time.second = omp_get_wtime();
-    std::cout << "Seq " << (time.second - time.first) << ' '
-        << std::endl;
-    time.first = omp_get_wtime();
     Result result_std = Contraststd(image);
-    time.second = omp_get_wtime();
-    std::cout << "Std " << (time.second - time.first) << ' '
-        << std::endl;
         ASSERT_EQ(result_seq, result_std);
     }
 int main(int argc, char** argv) {
