@@ -9,6 +9,7 @@ std::vector<double> Gauss_Sequential(std::vector<double> image, int width,
     int height) {
     std::vector<double> core = Gauss_Core(3);
     std::vector<double> res(width * height);
+
     for (int x = 1; x < width - 1; x++) {
         for (int y = 1; y < height - 1; y++) {
             double sum = 0;
