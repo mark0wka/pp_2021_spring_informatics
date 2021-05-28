@@ -73,11 +73,9 @@ TEST(Integrate_rectangle, Test_int_rec_1) {
     a[1] = 0;
     b[1] = 3;
 
-    double ans1 = Calculation_Seq(a, b, 100, f1);
-    std::cout << "1: " << ans1 << std::endl;
+    double ans1 = Calculation_Seq(a, b, 100, f5);
 
-    double ans2 = Calculation_Std(a, b, 100, f1);
-    std::cout << "2: " << ans2 << std::endl;
+    double ans2 = Calculation_Std(a, b, 100, f5);
 
     ASSERT_NEAR(ans1, ans2, 100);
 }
