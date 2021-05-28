@@ -79,47 +79,6 @@ TEST(OPTIM_MULTIPLY_SPARSE_MATRICES, PERFORMANCE_MEASUREMENT_OF_MULTIPLICATION_B
 
 
 /////////////////////////////////////////////////
-///    NAIVE_MULTIPLY_SPARSE_MATRICES_OMP    ////
-/////////////////////////////////////////////////
-
-TEST(NAIVE_MULTIPLY_SPARSE_MATRICES_OMP, PERFORMANCE_MEASUREMENT_OF_MULTIPLICATION_BIG_SPARSE_MATRICES) {
-    ccs_complex_matrix big_sparse_matrix_1 = generate_regular_ccs(SEED_1, N, COUNT_IN_COL);
-    std::cout << "\tFirst matrix is generated!\n";
-
-    ccs_complex_matrix big_sparse_matrix_2 = generate_regular_ccs(SEED_2, N, COUNT_IN_COL);
-    std::cout << "\tSecond matrix is generated!\n";
-
-    auto start_time = std::chrono::high_resolution_clock::now();
-    EXPECT_NO_THROW(naive_multiplicate_omp(big_sparse_matrix_1, big_sparse_matrix_2));
-    auto finish_time = std::chrono::high_resolution_clock::now();
-
-    printf("\tTime  = %f\n", static_cast<float>(
-        std::chrono::duration_cast<std::chrono::milliseconds>
-            (finish_time - start_time).count() / 1000.));
-}
-
-
-/////////////////////////////////////////////////
-///    OPTIM_MULTIPLY_SPARSE_MATRICES_OMP    ////
-/////////////////////////////////////////////////
-
-TEST(OPTIM_MULTIPLY_SPARSE_MATRICES_OMP, PERFORMANCE_MEASUREMENT_OF_MULTIPLICATION_BIG_SPARSE_MATRICES) {
-    ccs_complex_matrix big_sparse_matrix_1 = generate_regular_ccs(SEED_1, N, COUNT_IN_COL);
-    std::cout << "\tFirst matrix is generated!\n";
-
-    ccs_complex_matrix big_sparse_matrix_2 = generate_regular_ccs(SEED_2, N, COUNT_IN_COL);
-    std::cout << "\tSecond matrix is generated!\n";
-
-    auto start_time = std::chrono::high_resolution_clock::now();
-    EXPECT_NO_THROW(optim_multiplicate_omp(big_sparse_matrix_1, big_sparse_matrix_2));
-    auto finish_time = std::chrono::high_resolution_clock::now();
-
-    printf("\tTime  = %f\n", static_cast<float>(
-        std::chrono::duration_cast<std::chrono::milliseconds>
-            (finish_time - start_time).count() / 1000.));
-}
-
-/////////////////////////////////////////////////
 ///    NAIVE_MULTIPLY_SPARSE_MATRICES_STD    ////
 /////////////////////////////////////////////////
 

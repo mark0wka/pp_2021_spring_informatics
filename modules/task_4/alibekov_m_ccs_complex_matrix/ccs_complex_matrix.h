@@ -2,8 +2,6 @@
 #ifndef MODULES_TASK_4_ALIBEKOV_M_CCS_COMPLEX_MATRIX_CCS_COMPLEX_MATRIX_H_
 #define MODULES_TASK_4_ALIBEKOV_M_CCS_COMPLEX_MATRIX_CCS_COMPLEX_MATRIX_H_
 
-#include <omp.h>
-
 #include <vector>
 #include <complex>
 #include <iostream>
@@ -43,9 +41,6 @@ ccs_complex_matrix generate_regular_ccs(int seed, int N, int count_in_col);
 ccs_complex_matrix transpose(const ccs_complex_matrix &A);
 ccs_complex_matrix naive_multiplicate(const ccs_complex_matrix &A, const ccs_complex_matrix &B);
 ccs_complex_matrix optim_multiplicate(const ccs_complex_matrix &A, const ccs_complex_matrix &B);
-
-ccs_complex_matrix naive_multiplicate_omp(const ccs_complex_matrix &A, const ccs_complex_matrix &B);
-ccs_complex_matrix optim_multiplicate_omp(const ccs_complex_matrix &A, const ccs_complex_matrix &B);
 
 ccs_complex_matrix naive_multiplicate_std(const ccs_complex_matrix &A, const ccs_complex_matrix &B);
 ccs_complex_matrix optim_multiplicate_std(const ccs_complex_matrix &A, const ccs_complex_matrix &B);
